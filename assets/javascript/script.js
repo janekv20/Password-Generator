@@ -10,6 +10,44 @@ var getCharacterCount = function() {
   return characterCount;
 }
 
+var characterCount = getCharacterCount();
+
+var passwordCharacters = function() {
+
+  var characterTypes = {
+    lowercase: window.confirm("Do you want to include lowercase characters in your password?"),
+    uppercase: window.confirm("Do you want to include uppercase characters in your password?"),
+    numericals: window.confirm("Do you want to include number characters in your password?"),
+    special: window.confirm("Do you want to include special characters in your password?")
+  }
+  if (characterTypes.lowercase === true) {
+    lowercaseCharacters ="abcdefghijklmnopqrstuvwxyz";
+  }
+  else {
+    lowercaseCharacters = ""
+  };
+  if (characterTypes.uppercase === true) {
+    uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  } else {
+    uppercaseCharacters = ""
+  }
+  if (characterTypes.special === true) {
+    specialCharacters = "!\"@#$/%^&*()_-+=~';:'<,.>/?{}[]|";
+  } else {
+    specialCharacters = ""
+  }
+  if (characterTypes.numericals === true) {
+    numberCharacters = "0123456789";
+  } else {
+    numberCharacters = "";
+  }
+  if (characterTypes.lowercase === false && characterTypes.uppercase === false && characterTypes.special === false && characterTypes.numericals ===false) {
+    window.alert("You have to choose at least one type of characters! Please try again.");
+    return passwordCharacters();
+  } else {
+    return lowercaseCharacters + uppercaseCharacters + specialCharacters +numberCharacters};
+  }
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
