@@ -48,6 +48,20 @@ var passwordCharacters = function() {
     return lowercaseCharacters + uppercaseCharacters + specialCharacters +numberCharacters};
   }
 
+// Create global variable to store results from passwordCharacters function
+var selectedCharacters = passwordCharacters();
+
+//Generated Randomization of Password function
+function generatePassword() {
+  var createdPassword = "";
+  var i = 0;
+  //for loop to add random characters
+  while (i < characterCount) {
+    createdPassword += selectedCharacters[Math.floor(Math.random()* selectedCharacters.length)];
+    i++;
+  }
+  return createdPassword;
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
