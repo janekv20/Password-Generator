@@ -1,5 +1,6 @@
 // Assignment code here
 
+//function to display character length minimum/maximum prompt
 var getCharacterCount = function() {
   var characterCount = window.prompt("Input the number of characters you would like your password to be. Minimum 8 and no more than 128.");
 
@@ -13,7 +14,7 @@ var getCharacterCount = function() {
 var characterCount = getCharacterCount();
 
 var passwordCharacters = function() {
-
+//function to display character type selection prompts
   var characterTypes = {
     lowercase: window.confirm("Do you want to include lowercase characters in your password?"),
     uppercase: window.confirm("Do you want to include uppercase characters in your password?"),
@@ -62,6 +63,7 @@ function generatePassword() {
   }
   return createdPassword;
 }
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
